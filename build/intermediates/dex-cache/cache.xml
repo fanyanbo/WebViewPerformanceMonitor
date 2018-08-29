@@ -2,22 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="F:\WebViewPerformanceMonitor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\fanyanbo\.android\build-cache\66c4566c7a56f47d65ec00438deb990114dc137f\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="ba2521316af24f4e35972954a160ef9dabcd509f">
-        <dex dex="F:\WebViewPerformanceMonitor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_348104ddc79030e6204f0135f7f8e2885b64fcaf\classes.dex" />
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\study\github\WebViewPerformanceMonitor\app\build\intermediates\pre-dexed\debug\classes_1f37d4586156229ade0e8be2b5c45245eb6224a2.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="F:\WebViewPerformanceMonitor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\fanyanbo\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="F:\WebViewPerformanceMonitor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_50725d13542adddec7cd846ce3d0b171c593b9cf\classes.dex" />
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\study\github\WebViewPerformanceMonitor\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_e6d511d0ee89e424d1b34edce54f85a97ea16c80.jar" />
     </item>
 
 </items>

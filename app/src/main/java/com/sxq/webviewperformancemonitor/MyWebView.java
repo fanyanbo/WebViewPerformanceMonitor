@@ -34,7 +34,13 @@ public class MyWebView extends WebView {
                 }
 
                 @Override
-                public void handleResource(String jsonStr) {
+                public void handleResourceTiming(String jsonStr) {
+
+                }
+
+                @Override
+                public void handleNavigationTiming(String jsonStr) {
+
                 }
             };
         } else {

@@ -29,8 +29,8 @@ public class MyWebViewClient extends WebViewClient {
     /**
      * WebView不支持修改Timeout , 这里自定义
      */
-    private int mTimeOut = 3000;
-    private int mJsTimeout = 500;
+    private int mTimeOut = 5000;
+    private int mJsTimeout = 1500;
 
     private Timer mTimer = new Timer();
 
@@ -157,7 +157,7 @@ public class MyWebViewClient extends WebViewClient {
 //        Logger.d("加载网页资源 , url:" + url + " , WebView进度:" + view.getProgress());
     }
 
-    public void onPageFinished(WebView view, String url) {
+    public void onPageFinished(final WebView view, String url) {
         super.onPageFinished(view, url);
 
         Logger.d("网页加载完成,WebView进度:" + view.getProgress());
@@ -168,11 +168,17 @@ public class MyWebViewClient extends WebViewClient {
             Logger.d("注入js脚本");
             //可能会回调多次
             isWebLoadFinished.set(true);
-            String format = "javascript:%s.sendResource(JSON.stringify(window.performance.timing));";
-            String injectJs = String.format(format, MyWebView.ANDROID_OBJECT_NAME);
-            view.loadUrl(injectJs);
+//            String format = "javascript:%s.sendNavigationTiming(JSON.stringify(window.performance.timing));";
+            String format = "javascript:%s.sendResourceTiming(JSON.stringify(window.performance.getEntriesByType('resource')));";
+            final String injectJs = String.format(format, MyWebView.ANDROID_OBJECT_NAME);
+            view.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    view.loadUrl(injectJs);
+                    setupJsInjectTimeout();
+                }
+            },2000);
 
-            setupJsInjectTimeout();
         }
     }
 

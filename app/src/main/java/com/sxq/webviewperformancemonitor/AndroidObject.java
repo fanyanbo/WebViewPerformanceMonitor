@@ -15,16 +15,29 @@ public abstract class AndroidObject {
     private long endTime ;
 
     /**
-     *用于收集Timing信息
+     *用于收集ResourceTiming信息
      *
      * @param jsonStr
      */
     @JavascriptInterface
-    public void sendResource(String jsonStr) {
+    public void sendResourceTiming(String jsonStr) {
         mIsDataReturn = true ;
         endTime = System.currentTimeMillis();
         Logger.d("js成功执行时间：" + (endTime-startTime));
-        handleResource(jsonStr);
+        handleResourceTiming(jsonStr);
+    }
+
+    /**
+     *用于收集NavigationTiming信息
+     *
+     * @param jsonStr
+     */
+    @JavascriptInterface
+    public void sendNavigationTiming(String jsonStr) {
+        mIsDataReturn = true ;
+        endTime = System.currentTimeMillis();
+        Logger.d("js成功执行时间：" + (endTime-startTime));
+        handleNavigationTiming(jsonStr);
     }
 
 
@@ -48,7 +61,8 @@ public abstract class AndroidObject {
      *
      * @param jsonStr
      */
-    public abstract void handleResource(String jsonStr);
+    public abstract void handleResourceTiming(String jsonStr);
+    public abstract void handleNavigationTiming(String jsonStr);
 
     public boolean isDataReturn() {
         return mIsDataReturn;
